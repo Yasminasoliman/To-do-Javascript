@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Alexandria';
+    src: url('../assets/fonts/Alexandria/Alexandria-Light.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Alexandria';
+    src: url('../assets/fonts/Alexandria/Alexandria-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Alexandria';
+    src: url('../assets/fonts/Alexandria/Alexandria-Bold.ttf');
+    font-weight: 700;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Alexandria';
+}
+
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-block-end: 1.8rem;
+}
