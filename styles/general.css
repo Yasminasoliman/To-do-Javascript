@@ -68,3 +68,12 @@ input::placeholder {
     color: var(--placeholder-color);
     opacity: 1;
 }
+
+.input-error {
+    border: 1px solid var(--error);
+}
+
+.error {
+    color: var(--error);
+    padding: 4px;
+}

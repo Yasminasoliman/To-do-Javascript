@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./styles/colors.css">
     <link rel="stylesheet" href="./styles/general.css">
     <link rel="stylesheet" href="./styles/form.css">
+
+    <script defer src="./scripts/auth.js"></script>
 </head>
 
 <body>
@@ -18,17 +20,20 @@
         </aside>
         <section class="form-container">
             <h2>Sign Up</h2>
-            <form id="SignUpForm" class="form">
+            <form id="signupForm" class="form">
 
                 <label for="email">Email</label>
                 <input type="text" name="email" id="email" placeholder="example@gmail.com" required />
+                <div id="emailError" class="error"></div>
 
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="8 characters" required />
+                <div id="passwordError" class="error"></div>
 
                 <label for="confirmPassword">Password</label>
                 <input type="password" name="confirmPassword" id="confirmPassword" placeholder="retype password"
                     required />
+                <div id="confirmError" class="error"></div>
 
                 <button class="primary-btn">Sign Up</button>
             </form>
