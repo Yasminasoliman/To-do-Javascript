@@ -16,27 +16,24 @@
             <h1>To do Native</h1>
             <img src="./assets/svgs/todoNative.svg" />
         </aside>
-        <section class="signup">
+        <section class="form-container">
             <h2>Sign Up</h2>
             <form id="SignUpForm" class="form">
-                <div class="input">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email" placeholder="example@gmail.com" required />
-                </div>
 
-                <div class="input">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="8 characters" required />
-                </div>
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="example@gmail.com" required />
 
-                <div class="input">
-                    <label for="confirmPassword">Password</label>
-                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="retype password"
-                        required />
-                </div>
-                <button>Sign Up</button>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="8 characters" required />
+
+                <label for="confirmPassword">Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="retype password"
+                    required />
+
+                <button class="primary-btn">Sign Up</button>
             </form>
-            <p>Already have an account? <a href="./index.html">Login</a></p>
+
+            <p>Already have an account? <a href="./index.html" class="text-btn">Login</a></p>
         </section>
     </div>
 </body>

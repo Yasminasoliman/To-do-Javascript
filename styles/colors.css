@@ -5,17 +5,21 @@
     --success-200: hsl(123, 100%, 87%);
     --success-800: hsl(123, 51%, 24%);
     --error: hsl(0, 90%, 64%);
-    --warin: hsl(43, 75%, 62%);
+    --warning: hsl(43, 75%, 62%);
 
     /* Neutral shades */
     --text-color: hsl(0, 0%, 20%);
-    --placeholder-color: hsl(0, 2.6%, 62.5%);
-    --background-color-100: hsl(0, 0%, 98%);
-    --background-color-200: hsl(0, 0%, 98%);
-    --background-color-300: hsl(182, 41%, 72%);
+    --placeholder-color: #a29d9d;
+
 
     --white: hsl(0, 0%, 100%);
-    --todo-background-color: hsl(180, 33%, 96%);
+    --background-color-white-100: hsl(0, 0%, 96%);
+
+    --background-color-100: hsl(180, 33%, 96%);
+    --background-color-200: hsl(180, 33%, 93%);
+    --background-color-300: hsl(182, 41%, 72%);
+
+    --todo-background-color: hsl(180, 33%, 94%);
 
 
 }

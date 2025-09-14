@@ -5,21 +5,13 @@
     text-align: center;
 }
 
-.login,
-.signup {
-    padding-inline: 2.4rem;
-    padding-block-start: 4.4rem;
-    border-radius: 20px;
-    position: relative;
-    top: -15px;
-    background-color: var(--background-color-100);
-}
 
 aside {
     background-color: var(--background-color-300);
+    color: var(--white);
     min-height: 28.8rem;
     align-content: center;
-    color: var(--white);
+    /*Vertically*/
 }
 
 aside>img {
@@ -27,19 +19,20 @@ aside>img {
     max-height: 8.2rem;
 }
 
-.login a,
-.login h2,
-.signup h2 {
+.form-container {
+    background-color: var(--background-color-white-100);
+    padding-inline: 2.4rem;
+    padding-block-start: 4.4rem;
+    border-radius: 20px;
+    position: relative;
+    top: -15px;
+}
+
+h2 {
     color: var(--primary-btn-color);
 }
 
-label,
-p {
-    color: var(--text-color);
-}
-
-.login h2,
-.signup h2 {
+h2 {
     font-weight: 300;
     font-size: 3.6rem;
     margin-block-end: 3.6rem;
@@ -51,26 +44,16 @@ p {
 }
 
 label {
-    margin-block: 1.6rem 0.4rem;
     display: block;
+    margin-block: 1.6rem 0.4rem;
 }
 
 input {
-    padding: 10px;
     width: 100%;
-    border: 1px solid #C6C6C6;
-    color: var(--placeholder-color);
-    border-radius: 6px;
-    background-color: transparent;
 }
 
 button {
     width: 100%;
-    color: var(--white);
-    padding: 1rem;
-    font-size: 2rem;
-    border: none;
-    border-radius: 6px;
-    background-color: var(--primary-btn-color);
     margin-block-start: 3.2rem;
+    font-size: 2rem;
 }

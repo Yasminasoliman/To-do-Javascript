@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/colors.css">
     <link rel="stylesheet" href="./styles/general.css">
     <link rel="stylesheet" href="./styles/form.css">
+    <script defer src="./scripts/auth.js"></script>
 </head>
 
 <body>
@@ -16,21 +17,20 @@
             <h1>To do Native</h1>
             <img src="./assets/svgs/todoNative.svg" />
         </aside>
-        <section class="login">
+        <section class="form-container">
             <h2>Login</h2>
             <form id="loginForm" class="form">
-                <div class="input">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email" placeholder="example@gmail.com" required />
-                </div>
 
-                <div class="input">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="*******" required />
-                </div>
-                <button>Login</button>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="example@gmail.com" required />
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="*******" required />
+
+                <button class="primary-btn">Login</button>
             </form>
-            <p>Don't have an account? <a href="./signup.html">Sign Up</a></p>
+
+            <p>Don't have an account? <a href="./signup.html" class="text-btn">Sign Up</a></p>
         </section>
     </div>
 </body>
