@@ -1,0 +1,86 @@
+header {
+    background-color: var(--background-color-200);
+    min-height: 5rem;
+    align-content: center;
+}
+
+.tasks-page {
+    background-color: var(--background-color-white-100);
+}
+
+.tasks-page>main {
+    text-align: center;
+    margin-inline: auto;
+    margin-block-start: 4.5rem;
+    margin-inline: 2.4rem;
+}
+
+.tasks-page>main>.greeting {
+    text-align: start;
+    margin-block-end: 2.4rem;
+}
+
+
+header>a {
+    color: var(--primary-btn-color);
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding-inline: 2.4rem;
+}
+
+.add-task {
+    display: flex;
+    gap: 8px;
+}
+
+.add-task>input,
+.add-task>button {
+    font-size: 1.3rem;
+}
+
+.add-task>input {
+    flex-grow: 1;
+}
+
+.tasks-section {
+    background-color: var(--white);
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.tasks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-block-start: 1.6rem;
+    min-height: 40rem;
+}
+
+.nothing-to-do {
+    min-height: 40rem;
+    align-content: center;
+}
+
+.task {
+    background-color: var(--todo-background-color);
+    min-height: 3.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.task>span {
+    font-size: 1.2rem;
+}
+
+.actions {
+    margin-inline-start: auto;
+}
+
+.checkbox,
+.actions>* {
+    cursor: pointer;
+}
