@@ -9,11 +9,23 @@ function handleLogin(loginForm) {
   // e.preventDefault();
   const formData = new FormData(loginForm);
   const userData = Object.fromEntries(formData);
+  if (!userData.email.trim()) {
+    inputError("email");
+    document.getElementById("emailError").textContent =
+      "Please enter your email";
+    return;
+  }
+  if (!userData.password.trim()) {
+    inputError("password");
+    document.getElementById("passwordError").textContent =
+      "Please enter your password";
+    return;
+  }
   const user = JSON.parse(localStorage.getItem(userData.email));
   if (!user) {
     inputError("email");
     document.getElementById("emailError").textContent =
-      "This Email is not registered";
+      "There is not account with this email. Please register first";
   } else if (!(userData.password === user.password)) {
     inputError("password");
     document.getElementById("passwordError").textContent =
@@ -31,9 +43,14 @@ if (loginForm) {
   });
 
   loginForm.addEventListener("input", (e) => {
-    document.getElementById(`${e.target.name}`).classList.remove("input-error");
+    removeInputError(`${e.target.name}`);
     document.getElementById(`${e.target.name}Error`).textContent = "";
   });
+}
+
+function isValidName(name) {
+  const nameRegex = /^[A-Za-z]+(?:[ -][A-Za-z]+)*$/;
+  return nameRegex.test(name) && name.length >= 2;
 }
 
 function isValidEmail(email) {
@@ -47,13 +64,47 @@ function isValidPassword(password) {
 
 const signupForm = document.getElementById("signupForm");
 if (signupForm) {
+  const firstNameInput = document.getElementById("firstName");
+  const lastNameInput = document.getElementById("lastName");
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
   const confirmInput = document.getElementById("confirmPassword");
 
+  const firstNameError = document.getElementById("firstNameError");
+  const lastNameError = document.getElementById("lastNameError");
   const emailError = document.getElementById("emailError");
   const passwordError = document.getElementById("passwordError");
   const confirmError = document.getElementById("confirmError");
+
+  firstNameInput.addEventListener("blur", () => {
+    if (!firstNameInput.value.trim()) {
+      firstNameError.textContent = "";
+    } else if (!isValidName(firstNameInput.value.trim())) {
+      firstNameError.textContent =
+        "Name cannot contain numbers or special characters and must be more than one letter";
+      firstNameError.className = "error";
+      inputError("firstName");
+    } else {
+      removeInputError("firstName");
+      firstNameError.textContent = "Valid name ✔";
+      firstNameError.className = "success";
+    }
+  });
+
+  lastNameInput.addEventListener("blur", () => {
+    if (!lastNameInput.value.trim()) {
+      lastNameError.textContent = "";
+    } else if (!isValidName(lastNameInput.value.trim())) {
+      lastNameError.textContent =
+        "Name cannot contain numbers or special characters and must be more than one letter";
+      lastNameError.className = "error";
+      inputError("lastName");
+    } else {
+      removeInputError("lastName");
+      lastNameError.textContent = "Valid name ✔";
+      lastNameError.className = "success";
+    }
+  });
 
   emailInput.addEventListener("blur", () => {
     if (!emailInput.value.trim()) {
@@ -101,6 +152,18 @@ if (signupForm) {
   signupForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    const allInputs = signupForm.querySelectorAll("input");
+
+    allInputs.forEach((input) => {
+      if (!input.value.trim()) {
+        input.nextElementSibling.textContent = `${input.name.toLowerCase()} cannot be empty`;
+        inputError(input.name);
+        return;
+      }
+    });
+
+    const firstName = firstNameInput.value.trim();
+    const lastName = lastNameInput.value.trim();
     const email = emailInput.value.trim();
     const password = passwordInput.value;
     const confirm = confirmInput.value;
@@ -129,11 +192,11 @@ if (signupForm) {
       return;
     }
 
-    // Save user in localStorage (demo only!)
-    const userData = { email, password };
+    // Save user in localStorage
+    const userData = { firstName, lastName, email, password };
     localStorage.setItem(email, JSON.stringify(userData));
 
-    alert("Registered successfully! Now login.");
-    window.location.href = "index.html";
+    alert("Registered successfully!");
+    window.location.replace("tasks.html");
   });
 }

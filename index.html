@@ -21,13 +21,17 @@
             <h2>Login</h2>
             <form id="loginForm" class="form">
 
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="example@gmail.com" required />
-                <div id="emailError" class="error"></div>
+                <div class="input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="example@gmail.com" />
+                    <div id="emailError" class="error"></div>
+                </div>
 
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="*******" required />
-                <div id="passwordError" class="error"></div>
+                <div class="input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="*******" />
+                    <div id="passwordError" class="error"></div>
+                </div>
 
                 <button class="primary-btn">Login</button>
             </form>

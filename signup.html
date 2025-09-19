@@ -22,18 +22,35 @@
             <h2>Sign Up</h2>
             <form id="signupForm" class="form">
 
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" placeholder="example@gmail.com" required />
-                <div id="emailError" class="error"></div>
+                <div class="input">
+                    <label for="firstName">First Name</label>
+                    <input type="text" name="firstName" id="firstName" placeholder="Mohamed" />
+                    <div id="firstNameError" class="error"></div>
+                </div>
 
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="8 characters" required />
-                <div id="passwordError" class="error"></div>
+                <div class="input">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="lastName" id="lastName" placeholder="Ahmed" />
+                    <div id="lastNameError" class="error"></div>
+                </div>
 
-                <label for="confirmPassword">Password</label>
-                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="retype password"
-                    required />
-                <div id="confirmError" class="error"></div>
+                <div class="input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="example@gmail.com" />
+                    <div id="emailError" class="error"></div>
+                </div>
+
+                <div class="input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="8 characters" />
+                    <div id="passwordError" class="error"></div>
+                </div>
+
+                <div class="input">
+                    <label for="confirmPassword">Password</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="retype password" />
+                    <div id="confirmError" class="error"></div>
+                </div>
 
                 <button class="primary-btn">Sign Up</button>
             </form>
