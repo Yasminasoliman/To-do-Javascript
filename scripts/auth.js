@@ -25,12 +25,13 @@ function handleLogin(loginForm) {
   if (!user) {
     inputError("email");
     document.getElementById("emailError").textContent =
-      "There is not account with this email. Please register first";
+      "There is no account with this email. Please register first";
   } else if (!(userData.password === user.password)) {
     inputError("password");
     document.getElementById("passwordError").textContent =
       "Password is incorrect";
   } else {
+    localStorage.setItem("currentUser", user.email);
     window.location.replace("tasks.html");
   }
 }
