@@ -1,6 +1,18 @@
+"use strict";
+if (!localStorage.getItem("currentUser")) {
+  location.replace("index.html");
+}
+
 const currentUserEmail = localStorage.getItem("currentUser");
 
 const userData = JSON.parse(localStorage.getItem(currentUserEmail));
+
+const logout = document.getElementById("logout");
+
+logout.addEventListener("click", () => {
+  localStorage.removeItem("currentUser");
+  window.location.replace("index.html");
+});
 
 const greeting = document.querySelector(".greeting");
 const today = document.querySelector(".date");

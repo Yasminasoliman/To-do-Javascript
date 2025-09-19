@@ -52,9 +52,22 @@ h1 {
     padding: 1rem;
 }
 
+button.text-btn {
+    background-color: transparent;
+    color: var(--primary-btn-color);
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
 a.text-btn {
     color: var(--primary-btn-color);
     text-decoration: none;
+}
+
+.text-btn:hover {
+    background-color: var(--background-color-300);
 }
 
 input {

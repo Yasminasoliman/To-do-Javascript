@@ -1,3 +1,8 @@
+"use strict";
+if (localStorage.getItem("currentUser")) {
+  window.location.replace("tasks.html");
+}
+
 function inputError(input) {
   document.getElementById(`${input}`).classList.add("input-error");
 }
