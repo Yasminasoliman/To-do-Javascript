@@ -1,7 +1,9 @@
 header {
     background-color: var(--background-color-200);
+    display: flex;
     min-height: 5rem;
-    align-content: center;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .tasks-page {
@@ -76,7 +78,7 @@ header>a {
     font-size: 1.2rem;
 }
 
-.actions {
+.edit {
     margin-inline-start: auto;
 }
 

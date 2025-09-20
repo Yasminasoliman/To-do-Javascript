@@ -25,40 +25,11 @@
                 <h2><span>Today is</span> <span class="date">Sun, 14 Sep 2025</span></h2>
             </section>
             <section class="tasks-section">
-                <form class="add-task">
-                    <input type="text" placeholder="What is there do to?..." />
+                <form class="add-task" id="addTask">
+                    <input type="text" id="newTask" placeholder="What is there do to?..." />
                     <button class="primary-btn">Add Task</button>
                 </form>
-                <div class="tasks-container">
-                    <div class="task">
-                        <img class="checkbox" src="./assets/svgs/unchecked-box.svg">
-                        <span>Clean the car</span>
-                        <div class="actions">
-                            <img class="checkbox" src="./assets/svgs/edit-icon.svg">
-                            <img class="checkbox" src="./assets/svgs/delete-icon.svg">
-                        </div>
-                    </div>
-                    <div class="task">
-                        <div class="checkbox"></div>
-                        <span>Study math</span>
-                        <div class="actions">
-                            <div class="edit"></div>
-                            <div class="delete"></div>
-                        </div>
-                    </div>
-                    <div class="task">
-                        <div class="checkbox"></div>
-                        <span>cook lunch</span>
-                        <div class="actions">
-                            <div class="edit"></div>
-                            <div class="delete"></div>
-                        </div>
-                    </div>
-                    <div class="nothing-to-do">
-                        <img src="./assets/svgs/nothingtodo.svg" />
-                        <p>Seems like there is nothing to do...</p>
-                    </div>
-                </div>
+                <div class="tasks-container" id="taskContainer"></div>
             </section>
         </main>
     </div>

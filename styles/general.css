@@ -42,6 +42,7 @@ h1 {
     border: none;
     border-radius: 6px;
     padding: 1rem;
+    cursor: pointer;
 }
 
 .secondary-btn {
@@ -50,6 +51,7 @@ h1 {
     border: 2px solid var(--primary-btn-color);
     border-radius: 6px;
     padding: 1rem;
+    cursor: pointer;
 }
 
 button.text-btn {

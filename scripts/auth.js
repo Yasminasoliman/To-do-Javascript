@@ -199,8 +199,9 @@ if (signupForm) {
     }
 
     // Save user in localStorage
-    const userData = { firstName, lastName, email, password };
+    const userData = { firstName, lastName, email, password, tasks: {} };
     localStorage.setItem(email, JSON.stringify(userData));
+    localStorage.setItem("currentUser", email);
 
     alert("Registered successfully!");
     window.location.replace("tasks.html");
