@@ -138,8 +138,8 @@ function toggleCheckTask(targetElement) {
   localStorage.setItem(currentUserEmail, JSON.stringify(userData));
 
   targetElement.src = userData.tasks[taskId].isChecked
-    ? "../assets/svgs/checked-box.svg"
-    : "../assets/svgs/unchecked-box.svg";
+    ? "./assets/svgs/checked-box.svg"
+    : "./assets/svgs/unchecked-box.svg";
 }
 
 function renameTask(targetElement) {
