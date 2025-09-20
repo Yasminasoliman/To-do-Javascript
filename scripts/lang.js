@@ -26,4 +26,4 @@ document.getElementById("language").addEventListener("change", (e) => {
   localStorage.setItem("languageSelected", selected);
 });
 
-setLanguage(localStorage.getItem("languageSelected") || "en");
+setLanguage(localStorage.getItem("languageSelected") ?? "en");

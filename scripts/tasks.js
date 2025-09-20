@@ -45,7 +45,7 @@ const MONTHS = [
 // 18 - 21 evening
 // 19 - 4 night
 function dayGreeting(hour) {
-  const lang = localStorage.getItem("languageSelected");
+  const lang = localStorage.getItem("languageSelected") ?? "en";
   if (hour >= 5 && hour < 12) return translations[lang]["goodmorning"];
   else if (hour >= 12 && hour < 18) return translations[lang]["goodafternoon"];
   else if (hour >= 18 && hour < 22) return translations[lang]["goodevening"];
@@ -61,13 +61,13 @@ const year = date.getFullYear();
 console.log(today);
 // today.textContent = `${WEEKDAYS[date.getDay()]}, ${date.getDate()}
 // ${MONTHS[date.getMonth()]} ${date.getFullYear()}`;
-if (localStorage.getItem("languageSelected") === "en") {
-  today.textContent = date.toDateString();
-} else {
+if (localStorage.getItem("languageSelected") === "ar") {
   today.textContent = `${dayName} 
   ${new Intl.NumberFormat("ar-EG").format(dayNumber)}
   ${monthName} 
   ${new Intl.NumberFormat("ar-EG").format(year)}`;
+} else {
+  today.textContent = date.toDateString();
 }
 
 greeting.children[0].textContent = `${dayGreeting(date.getHours())}, ${
