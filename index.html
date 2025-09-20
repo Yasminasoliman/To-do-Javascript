@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./styles/colors.css">
     <link rel="stylesheet" href="./styles/general.css">
     <link rel="stylesheet" href="./styles/form.css">
+    <script defer src="./scripts/translation.js"></script>
+    <script defer src="./scripts/lang.js"></script>
     <script defer src="./scripts/auth.js"></script>
 </head>
 
@@ -18,26 +20,36 @@
             <img src="./assets/svgs/todoNative.svg" />
         </aside>
         <section class="form-container">
-            <h2>Login</h2>
+            <h2 data-key="login"></h2>
             <form id="loginForm" class="form">
 
                 <div class="input">
-                    <label for="email">Email</label>
+                    <label for="email" data-key="email"></label>
                     <input type="email" name="email" id="email" placeholder="example@gmail.com" />
                     <div id="emailError" class="error"></div>
                 </div>
 
                 <div class="input">
-                    <label for="password">Password</label>
+                    <label for="password" data-key="password"></label>
                     <input type="password" name="password" id="password" placeholder="*******" />
                     <div id="passwordError" class="error"></div>
                 </div>
 
-                <button class="primary-btn">Login</button>
+                <button class="primary-btn" data-key="login"></button>
             </form>
 
-            <p>Don't have an account? <a href="./signup.html" class="text-btn">Sign Up</a></p>
+            <p>
+                <span data-key="signupMessage"></span>
+                <a href="./signup.html" class="text-btn" data-key="signup"></a>
+            </p>
         </section>
+        <footer>
+            <label for="language" class="language" data-key="language">Language:</label>
+            <select name="language" id="language">
+                <option value="en">English</option>
+                <option value="ar">عربي</option>
+            </select>
+        </footer>
     </div>
 </body>
 

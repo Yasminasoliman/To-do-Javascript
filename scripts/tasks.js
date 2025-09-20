@@ -17,37 +17,58 @@ logout.addEventListener("click", () => {
 const greeting = document.querySelector(".greeting");
 const today = document.querySelector(".date");
 
-// const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
-// const MONTHS = [
-//   "Jun",
-//   "Feb",
-//   "Mar",
-//   "Apr",
-//   "May",
-//   "Jun",
-//   "Jul",
-//   "Aug",
-//   "Sep",
-//   "Oct",
-//   "Nov",
-//   "Dec",
-// ];
+const WEEKDAYS = [
+  "الاحد",
+  "الاثنين",
+  "الثلاثاء",
+  "الاربعاع",
+  "الخميس",
+  "الجممه",
+  "السبت",
+];
+const MONTHS = [
+  "يناير",
+  "فبراير",
+  "مارس",
+  "ابريل",
+  "مايو",
+  "يونيه",
+  "يولو",
+  "اغسطس",
+  "ستمبر",
+  "اكتوبر",
+  "نوفمبر",
+  "ديسمبر",
+];
 // 5 - 11 morning
 // 12 - 17 afternoon
 // 18 - 21 evening
 // 19 - 4 night
 function dayGreeting(hour) {
-  if (hour >= 5 && hour < 12) return "Good morning";
-  else if (hour >= 12 && hour < 18) return "Good afternoon";
-  else if (hour >= 18 && hour < 22) return "Good evening";
-  else return "Good night";
+  const lang = localStorage.getItem("languageSelected");
+  if (hour >= 5 && hour < 12) return translations[lang]["goodmorning"];
+  else if (hour >= 12 && hour < 18) return translations[lang]["goodafternoon"];
+  else if (hour >= 18 && hour < 22) return translations[lang]["goodevening"];
+  else return translations[lang]["goodnight"];
 }
 
 let date = new Date();
-// today.textContent = `${WEEKDAYS[date.getDay()]}, ${date.getDate()} ${
-//   MONTHS[date.getMonth()]
-// } ${date.getFullYear()}`;
-today.textContent = date.toDateString();
+const dayName = WEEKDAYS[date.getDay()];
+const monthName = MONTHS[date.getMonth()];
+const dayNumber = date.getDate();
+const year = date.getFullYear();
+
+console.log(today);
+// today.textContent = `${WEEKDAYS[date.getDay()]}, ${date.getDate()}
+// ${MONTHS[date.getMonth()]} ${date.getFullYear()}`;
+if (localStorage.getItem("languageSelected") === "en") {
+  today.textContent = date.toDateString();
+} else {
+  today.textContent = `${dayName} 
+  ${new Intl.NumberFormat("ar-EG").format(dayNumber)}
+  ${monthName} 
+  ${new Intl.NumberFormat("ar-EG").format(year)}`;
+}
 
 greeting.children[0].textContent = `${dayGreeting(date.getHours())}, ${
   userData.firstName

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./styles/general.css">
     <link rel="stylesheet" href="./styles/tasks.css">
 
+    <script defer src="./scripts/translation.js"></script>
+    <script defer src="./scripts/lang.js"></script>
     <script defer src="./scripts/tasks.js"></script>
 </head>
 
@@ -17,21 +19,31 @@
 
         <header>
             <a href="./tasks.html">To do Native</a>
-            <button class="text-btn" id="logout">Logout</button>
+            <button class="text-btn" id="logout" data-key="logout"></button>
         </header>
         <main>
             <section class="greeting">
                 <p>Good morning, Yasmin!👋</p>
-                <h2><span>Today is</span> <span class="date">Sun, 14 Sep 2025</span></h2>
+                <h2>
+                    <span data-key="today">Today is</span>
+                    <span class="date">Sun, 14 Sep 2025</span>
+                </h2>
             </section>
             <section class="tasks-section">
                 <form class="add-task" id="addTask">
-                    <input type="text" id="newTask" placeholder="What is there do to?..." />
-                    <button class="primary-btn">Add Task</button>
+                    <input type="text" id="newTask" data-key="addTaskPlaceholder" />
+                    <button class="primary-btn" data-key="addTask">Add Task</button>
                 </form>
                 <div class="tasks-container" id="taskContainer"></div>
             </section>
         </main>
+        <footer>
+            <label for="language" class="language" data-key="language"></label>
+            <select name="language" id="language">
+                <option value="en">English</option>
+                <option value="ar">عربي</option>
+            </select>
+        </footer>
     </div>
 </body>
 
