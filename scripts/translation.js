@@ -23,6 +23,25 @@ const translations = {
     goodevening: "Good evening",
     goodnight: "Good night",
     today: "Today is",
+    noTaskMicrocopy: "Seems like there is nothing to do...",
+
+    nameError:
+      "Name cannot contain numbers or special characters and must be more than one letter",
+    emailEmptyError: "Please enter your email",
+    emailFormatError: "Invalid email format",
+    emailExitsError: "This Email already exists",
+    emailNotRegisteredError:
+      "There is no account with this email. Please register first",
+    passwordEmptyError: "Please enter your password",
+    passwordCheckError: "Password is incorrect",
+    passwordCreationError: "Password must be at least 8 characters.",
+    confirmPasswordError: "Passwords do not match.",
+
+    nameSuccess: "Valid name ✔",
+    emailSuccess: "Valid email ✔",
+    passwordSuccess: "Password length OK ✔",
+    confirmPasswordSuccess: "Passwords match ✔",
+    registerSuccess: "Registered successfully!",
   },
   ar: {
     greeting: " مرحبا",
@@ -48,5 +67,23 @@ const translations = {
     goodevening: "مساء الخير",
     goodnight: "مساء الخير",
     today: "اليوم هو",
+    noTaskMicrocopy: "ليس لديك اي مهام الان",
+
+    nameError: "الاسم يجب ان يكون من احرف فقط ويكون اكثر من حرف واحد",
+    emailEmptyError: "ارجاء ادخال البريد الالكتروني",
+    emailFormatError: "صيغة البريد الالكتروني غير صحيحه",
+    emailExitsError: "هذا البريد الالكتروني يوجد بالفعل. قم بتسجيل الدخول",
+    emailNotRegisteredError:
+      "لايوجد حساب لهذا البريد الالكتروني. قم بانشاء حساب اولا",
+    passwordEmptyError: "الرجاء ادخال كلمت السر",
+    passwordCheckError: "كلمت السر غير صحيحه",
+    passwordCreationError: "كلمت السر يجب ان تحتوي على 8 احرف على الاقل",
+    confirmPasswordError: "عفوا, كلمت السر غير متطابقة",
+
+    nameSuccess: "الاسم صحيح ✔",
+    emailSuccess: "البريد الالكتروني صحيح ✔",
+    passwordSuccess: "كلمت المرور صحيحة ✔",
+    confirmPasswordSuccess: "كلمت المرور متطابقة ✔",
+    registerSuccess: "!تم التسجيل بنجاح",
   },
 };

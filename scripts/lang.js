@@ -20,10 +20,12 @@ function setLanguage(lang) {
   document.getElementById("language").value = lang;
 }
 
+let lang = localStorage.getItem("languageSelected") ?? "en";
 document.getElementById("language").addEventListener("change", (e) => {
   const selected = e.target.value;
   setLanguage(selected);
   localStorage.setItem("languageSelected", selected);
+  lang = selected;
 });
 
-setLanguage(localStorage.getItem("languageSelected") ?? "en");
+setLanguage(lang);

@@ -11,30 +11,29 @@ function removeInputError(input) {
 }
 
 function handleLogin(loginForm) {
-  // e.preventDefault();
   const formData = new FormData(loginForm);
   const userData = Object.fromEntries(formData);
   if (!userData.email.trim()) {
     inputError("email");
     document.getElementById("emailError").textContent =
-      "Please enter your email";
+      translations[lang]["emailEmptyError"];
     return;
   }
   if (!userData.password.trim()) {
     inputError("password");
     document.getElementById("passwordError").textContent =
-      "Please enter your password";
+      translations[lang]["passwordEmptyError"];
     return;
   }
   const user = JSON.parse(localStorage.getItem(userData.email));
   if (!user) {
     inputError("email");
     document.getElementById("emailError").textContent =
-      "There is no account with this email. Please register first";
+      translations[lang]["emailNotRegisteredError"];
   } else if (!(userData.password === user.password)) {
     inputError("password");
     document.getElementById("passwordError").textContent =
-      "Password is incorrect";
+      translations[lang]["passwordCheckError"];
   } else {
     localStorage.setItem("currentUser", user.email);
     window.location.replace("tasks.html");
@@ -55,7 +54,7 @@ if (loginForm) {
 }
 
 function isValidName(name) {
-  const nameRegex = /^[A-Za-z]+(?:[ -][A-Za-z]+)*$/;
+  const nameRegex = /^[A-Za-z\u0600-\u06FF]+(?:[ -][A-Za-z\u0600-\u06FF]+)*$/;
   return nameRegex.test(name) && name.length >= 2;
 }
 
@@ -86,13 +85,12 @@ if (signupForm) {
     if (!firstNameInput.value.trim()) {
       firstNameError.textContent = "";
     } else if (!isValidName(firstNameInput.value.trim())) {
-      firstNameError.textContent =
-        "Name cannot contain numbers or special characters and must be more than one letter";
+      firstNameError.textContent = translations[lang]["nameError"];
       firstNameError.className = "error";
       inputError("firstName");
     } else {
       removeInputError("firstName");
-      firstNameError.textContent = "Valid name ✔";
+      firstNameError.textContent = translations[lang]["nameSuccess"];
       firstNameError.className = "success";
     }
   });
@@ -101,13 +99,12 @@ if (signupForm) {
     if (!lastNameInput.value.trim()) {
       lastNameError.textContent = "";
     } else if (!isValidName(lastNameInput.value.trim())) {
-      lastNameError.textContent =
-        "Name cannot contain numbers or special characters and must be more than one letter";
+      lastNameError.textContent = translations[lang]["nameError"];
       lastNameError.className = "error";
       inputError("lastName");
     } else {
       removeInputError("lastName");
-      lastNameError.textContent = "Valid name ✔";
+      lastNameError.textContent = translations[lang]["nameSuccess"];
       lastNameError.className = "success";
     }
   });
@@ -116,12 +113,12 @@ if (signupForm) {
     if (!emailInput.value.trim()) {
       emailError.textContent = "";
     } else if (!isValidEmail(emailInput.value.trim())) {
-      emailError.textContent = "Invalid email format";
+      emailError.textContent = translations[lang]["emailFormatError"];
       emailError.className = "error";
       inputError("email");
     } else {
       removeInputError("email");
-      emailError.textContent = "Valid email ✔";
+      emailError.textContent = translations[lang]["emailSuccess"];
       emailError.className = "success";
     }
   });
@@ -130,12 +127,12 @@ if (signupForm) {
     if (!passwordInput.value) {
       passwordError.textContent = "";
     } else if (!isValidPassword(passwordInput.value)) {
-      passwordError.textContent = "Password must be at least 8 characters.";
+      passwordError.textContent = translations[lang]["passwordCreationError"];
       passwordError.className = "error";
       inputError("password");
     } else {
       removeInputError("password");
-      passwordError.textContent = "Password length OK ✔";
+      passwordError.textContent = translations[lang]["passwordSuccess"];
       passwordError.className = "success";
     }
   });
@@ -144,12 +141,12 @@ if (signupForm) {
     if (!confirmInput.value) {
       confirmError.textContent = "";
     } else if (confirmInput.value !== passwordInput.value) {
-      confirmError.textContent = "Passwords do not match.";
+      confirmError.textContent = translations[lang]["confirmPasswordError"];
       confirmError.className = "error";
       inputError("confirmPassword");
     } else {
       removeInputError("confirmPassword");
-      confirmError.textContent = "Passwords match ✔";
+      confirmError.textContent = translations[lang]["confirmPasswordSuccess"];
       confirmError.className = "success";
     }
   });
@@ -186,14 +183,14 @@ if (signupForm) {
 
     if (password !== confirm) {
       inputError("confirmPassword");
-      confirmError.textContent = "Passwords do not match.";
+      confirmError.textContent = translations[lang]["confirmPasswordError"];
       confirmError.className = "error";
       return;
     }
 
     if (localStorage.getItem(email)) {
       inputError("email");
-      emailError.textContent = "This Email already exists";
+      emailError.textContent = translations[lang]["emailExitsError"];
       emailError.className = "error";
       return;
     }
@@ -203,7 +200,7 @@ if (signupForm) {
     localStorage.setItem(email, JSON.stringify(userData));
     localStorage.setItem("currentUser", email);
 
-    alert("Registered successfully!");
+    alert(translations[lang]["registerSuccess"]);
     window.location.replace("tasks.html");
   });
 }

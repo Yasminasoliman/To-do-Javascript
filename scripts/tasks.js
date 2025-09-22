@@ -14,9 +14,6 @@ logout.addEventListener("click", () => {
   window.location.replace("index.html");
 });
 
-const greeting = document.querySelector(".greeting");
-const today = document.querySelector(".date");
-
 const WEEKDAYS = [
   "الاحد",
   "الاثنين",
@@ -40,12 +37,14 @@ const MONTHS = [
   "نوفمبر",
   "ديسمبر",
 ];
+const greeting = document.querySelector(".greeting");
+const today = document.querySelector(".date");
 // 5 - 11 morning
 // 12 - 17 afternoon
 // 18 - 21 evening
 // 19 - 4 night
+// const lang = localStorage.getItem("languageSelected") ?? "en";
 function dayGreeting(hour) {
-  const lang = localStorage.getItem("languageSelected") ?? "en";
   if (hour >= 5 && hour < 12) return translations[lang]["goodmorning"];
   else if (hour >= 12 && hour < 18) return translations[lang]["goodafternoon"];
   else if (hour >= 18 && hour < 22) return translations[lang]["goodevening"];
@@ -70,9 +69,11 @@ if (localStorage.getItem("languageSelected") === "ar") {
   today.textContent = date.toDateString();
 }
 
-greeting.children[0].textContent = `${dayGreeting(date.getHours())}, ${
-  userData.firstName
-}`;
+(function userGreeting() {
+  greeting.children[0].textContent = `${dayGreeting(date.getHours())}, ${
+    userData.firstName
+  }`;
+})();
 
 function taskTemplate(taskId, taskName, isChecked = false) {
   return `<div class="task" id=${taskId}>
@@ -102,7 +103,7 @@ if (Object.keys(userData.tasks).length > 0) {
 } else {
   taskContainer.innerHTML = `<div class="nothing-to-do">
   <img src="./assets/svgs/nothingtodo.svg" />
-  <p>Seems like there is nothing to do...</p>
+  <p>${translations[lang]["noTaskMicrocopy"]}</p>
   </div>`;
 }
 
@@ -168,7 +169,7 @@ function deleteTask(targetElement) {
   if (Object.keys(userData.tasks).length === 0) {
     taskContainer.innerHTML = `<div class="nothing-to-do">
   <img src="./assets/svgs/nothingtodo.svg" />
-  <p>Seems like there is nothing to do...</p>
+  <p>${translations[lang]["noTaskMicrocopy"]}</p>
   </div>`;
   }
 }
