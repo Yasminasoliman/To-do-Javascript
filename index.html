@@ -15,34 +15,36 @@
 
 <body>
     <div class="login-page">
-        <aside>
-            <h1>To do Native</h1>
-            <img src="./assets/svgs/todoNative.svg" />
-        </aside>
-        <section class="form-container">
-            <h2 data-key="login"></h2>
-            <form id="loginForm" class="form">
+        <main>
+            <aside>
+                <h1>To do Native</h1>
+                <img src="./assets/svgs/todoNative.svg" />
+            </aside>
+            <section class="form-container">
+                <h2 data-key="login"></h2>
+                <form id="loginForm" class="form">
 
-                <div class="input">
-                    <label for="email" data-key="email"></label>
-                    <input type="email" name="email" id="email" placeholder="example@gmail.com" />
-                    <div id="emailError" class="error"></div>
-                </div>
+                    <div class="input">
+                        <label for="email" data-key="email"></label>
+                        <input type="email" name="email" id="email" placeholder="example@gmail.com" />
+                        <div id="emailError" class="error"></div>
+                    </div>
 
-                <div class="input">
-                    <label for="password" data-key="password"></label>
-                    <input type="password" name="password" id="password" placeholder="*******" />
-                    <div id="passwordError" class="error"></div>
-                </div>
+                    <div class="input">
+                        <label for="password" data-key="password"></label>
+                        <input type="password" name="password" id="password" placeholder="*******" />
+                        <div id="passwordError" class="error"></div>
+                    </div>
 
-                <button class="primary-btn" data-key="login"></button>
-            </form>
+                    <button class="primary-btn" data-key="login"></button>
+                </form>
 
-            <p>
-                <span data-key="signupMessage"></span>
-                <a href="./signup.html" class="text-btn" data-key="signup"></a>
-            </p>
-        </section>
+                <p>
+                    <span data-key="signupMessage"></span>
+                    <a href="./signup.html" class="text-btn" data-key="signup"></a>
+                </p>
+            </section>
+        </main>
         <footer>
             <label for="language" class="language" data-key="language">Language:</label>
             <select name="language" id="language">

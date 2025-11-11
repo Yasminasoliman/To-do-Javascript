@@ -114,3 +114,9 @@ input::placeholder {
     color: var(--error);
     padding: 4px;
 }
+
+@media (min-width: 1200px) {
+    p {
+        font-size: 1.3rem;
+    }
+}

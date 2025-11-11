@@ -16,54 +16,58 @@
 
 <body>
     <div class="signup-page">
-        <aside>
-            <h1>To do Native</h1>
-            <img src="./assets/svgs/todoNative.svg" />
-        </aside>
-        <section class="form-container">
-            <h2 data-key="signup"></h2>
-            <form id="signupForm" class="form">
+        <main>
+            <aside>
+                <h1>To do Native</h1>
+                <img src="./assets/svgs/todoNative.svg" />
+            </aside>
+            <section class="form-container">
+                <h2 data-key="signup"></h2>
+                <form id="signupForm" class="form">
 
-                <div class="input">
-                    <label for="firstName" data-key="firstName"></label>
-                    <input type="text" name="firstName" id="firstName" data-key="firstNamePlaceholder" />
-                    <div id="firstNameError" class="error"></div>
-                </div>
+                    <div class="container-row">
+                        <div class="input">
+                            <label for="firstName" data-key="firstName"></label>
+                            <input type="text" name="firstName" id="firstName" data-key="firstNamePlaceholder" />
+                            <div id="firstNameError" class="error"></div>
+                        </div>
 
-                <div class="input">
-                    <label for="lastName" data-key="lastName"></label>
-                    <input type="text" name="lastName" id="lastName" data-key="lastNamePlaceholder" />
-                    <div id="lastNameError" class="error"></div>
-                </div>
+                        <div class="input">
+                            <label for="lastName" data-key="lastName"></label>
+                            <input type="text" name="lastName" id="lastName" data-key="lastNamePlaceholder" />
+                            <div id="lastNameError" class="error"></div>
+                        </div>
+                    </div>
 
-                <div class="input">
-                    <label for="email" data-key="email"></label>
-                    <input type="email" name="email" id="email" placeholder="example@gmail.com" />
-                    <div id="emailError" class="error"></div>
-                </div>
+                    <div class="input">
+                        <label for="email" data-key="email"></label>
+                        <input type="email" name="email" id="email" placeholder="example@gmail.com" />
+                        <div id="emailError" class="error"></div>
+                    </div>
 
-                <div class="input">
-                    <label for="password" data-key="password"></label>
-                    <input type="password" name="password" id="password" data-key="passwordPlaceholder"
-                        placeholder="8 characters" />
-                    <div id="passwordError" class="error"></div>
-                </div>
+                    <div class="input">
+                        <label for="password" data-key="password"></label>
+                        <input type="password" name="password" id="password" data-key="passwordPlaceholder"
+                            placeholder="8 characters" />
+                        <div id="passwordError" class="error"></div>
+                    </div>
 
-                <div class="input">
-                    <label for="confirmPassword" data-key="confirmPassword" data-key="confirmPassword"></label>
-                    <input type="password" name="confirmPassword" id="confirmPassword"
-                        data-key="confirmPasswordPlaceholder" />
-                    <div id="confirmError" class="error"></div>
-                </div>
+                    <div class="input">
+                        <label for="confirmPassword" data-key="confirmPassword" data-key="confirmPassword"></label>
+                        <input type="password" name="confirmPassword" id="confirmPassword"
+                            data-key="confirmPasswordPlaceholder" />
+                        <div id="confirmError" class="error"></div>
+                    </div>
 
-                <button class="primary-btn" data-key="signup"></button>
-            </form>
+                    <button class="primary-btn" data-key="signup"></button>
+                </form>
 
-            <p>
-                <span data-key="loginMessage"></span>
-                <a href="./index.html" class="text-btn" data-key="login"></a>
-            </p>
-        </section>
+                <p>
+                    <span data-key="loginMessage"></span>
+                    <a href="./index.html" class="text-btn" data-key="login"></a>
+                </p>
+            </section>
+        </main>
         <footer>
             <label for="language" class="language" data-key="language"></label>
             <select name="language" id="language">
